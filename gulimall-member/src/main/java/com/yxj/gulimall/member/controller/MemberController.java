@@ -47,6 +47,8 @@ public class MemberController {
     @PostMapping(value = "/login")
     public R login(@RequestBody MemberUserLoginVo vo) {
 
+        System.out.println("wjy MemberController login");
+
         MemberEntity memberEntity = memberService.login(vo);
 
         if (memberEntity != null) {
