@@ -87,7 +87,7 @@ public class MemberServiceImpl extends ServiceImpl<MemberDao, MemberEntity> impl
             // 直到最外层的异常处理程序终止程序并打印出调用栈情况。
             throw new PhoneException();
         }
-        System.out.println("branch wjy change");
+        System.out.println("branch master change");
 
     }
 
