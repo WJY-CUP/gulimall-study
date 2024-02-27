@@ -32,6 +32,8 @@ public class MemberController {
     @PostMapping(value = "/register")
     public R register(@RequestBody MemberUserRegisterVo vo) {
 
+        System.out.println("MemberController register");
+
         try {
             memberService.register(vo);
         } catch (PhoneException e) {
