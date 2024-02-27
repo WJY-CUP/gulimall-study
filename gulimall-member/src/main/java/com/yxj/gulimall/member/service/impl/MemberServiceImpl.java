@@ -39,6 +39,9 @@ public class MemberServiceImpl extends ServiceImpl<MemberDao, MemberEntity> impl
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
+
+        System.out.println("branch wjy change");
+
         IPage<MemberEntity> page = this.page(
                 new Query<MemberEntity>().getPage(params),
                 new QueryWrapper<MemberEntity>()
@@ -87,7 +90,6 @@ public class MemberServiceImpl extends ServiceImpl<MemberDao, MemberEntity> impl
             // 直到最外层的异常处理程序终止程序并打印出调用栈情况。
             throw new PhoneException();
         }
-        System.out.println("branch master change");
 
     }
 
