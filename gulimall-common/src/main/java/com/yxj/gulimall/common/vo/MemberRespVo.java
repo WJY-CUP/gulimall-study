@@ -6,7 +6,7 @@ import lombok.ToString;
 import java.io.Serializable;
 import java.util.Date;
 /**
- *
+ * 作为登录的session信息，需要保存到Redis中，所以需要序列化
  * @author yaoxinjia
  */
 @ToString
