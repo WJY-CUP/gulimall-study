@@ -18,6 +18,7 @@ public class GulimailSessionConfig {
      * 设置session作用域为顶级域名
      * @return
      */
+//    为了实现子域和父域的session共享，需要将cookie的范围设置为父域
     @Bean
     public CookieSerializer cookieSerializer(){
         DefaultCookieSerializer cookieSerializer = new DefaultCookieSerializer();
@@ -27,6 +28,7 @@ public class GulimailSessionConfig {
     }
 
     @Bean
+//    session使用JDK序列化存储到redis中显示为16进制数据，不变查看。所以使用json序列化
     public RedisSerializer<Object> springSessionDefaultRedisSerializer() {
         return new GenericJackson2JsonRedisSerializer();
     }
