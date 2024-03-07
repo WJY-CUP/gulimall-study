@@ -44,15 +44,15 @@ public class CartInterceptor implements HandlerInterceptor {
         //获得当前登录用户的信息
         MemberRespVo memberResponseVo = (MemberRespVo) session.getAttribute(SESSION_LOGIN_KEY);
 
+        //如果用户登录了
         if (memberResponseVo != null) {
-            //用户登录了
             userInfoTo.setUserId(memberResponseVo.getId());
         }
 
         Cookie[] cookies = request.getCookies();
         if (cookies != null && cookies.length > 0) {
             for (Cookie cookie : cookies) {
-                //user-key
+                //如果cookie中有user-key，则代表是临时用户
                 String name = cookie.getName();
                 if (name.equals(TEMP_USER_COOKIE_NAME)) {
                     userInfoTo.setUserKey(cookie.getValue());
